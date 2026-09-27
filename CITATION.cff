@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use ForenX-Bench, please cite this software release and the original datasets and model papers."
+title: "ForenX-Bench"
+version: "1.0.0"
+type: software
+authors:
+  - family-names: "wunan-snsy"
+date-released: "2026-09-27"
+abstract: "A reproducible and auditable benchmark package for image-forgery detection and localization."

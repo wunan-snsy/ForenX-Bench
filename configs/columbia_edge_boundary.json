@@ -1,0 +1,8 @@
+{
+  "mask_prototypes_rgb": {"camera_1": [200, 0, 0], "camera_2": [0, 200, 0], "boundary": [0, 0, 200]},
+  "mask_decode": "nearest Euclidean RGB prototype",
+  "evaluation_set": "all 180 spliced images",
+  "predictor": "grayscale Sobel-like central finite-difference magnitude",
+  "prediction_rule": "top pixels equal to reference boundary prevalence per image",
+  "warning": "Boundary-reference pilot only. The blue mask is a splice-boundary/source-region annotation, not a complete generic manipulation mask."
+}

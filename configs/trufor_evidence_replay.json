@@ -1,0 +1,9 @@
+{
+  "schema_version": "forenx-spatial-evidence-0.1",
+  "audit_selection": "lexicographically first image from each of six camera-pair prefixes",
+  "score_tolerance": 0.00001,
+  "map_max_abs_tolerance": 0.00001,
+  "confidence_max_abs_tolerance": 0.00001,
+  "reference_definition": "nearest-RGB-prototype blue region in Columbia _edgemask_3",
+  "reference_scope": "splice boundary/source-region reference, not a complete generic manipulation mask"
+}

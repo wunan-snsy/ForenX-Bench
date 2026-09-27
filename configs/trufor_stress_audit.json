@@ -1,0 +1,8 @@
+{
+  "selection": "lexicographically first image from each of six camera-pair prefixes",
+  "conditions": {"jpeg_q80": {"type": "jpeg", "quality": 80}, "jpeg_q40": {"type": "jpeg", "quality": 40}, "resize_0.5": {"type": "resize_restore", "scale": 0.5}, "resize_0.25": {"type": "resize_restore", "scale": 0.25}},
+  "resize_downsample": "Pillow LANCZOS",
+  "resize_restore": "Pillow BICUBIC",
+  "map_threshold": 0.5,
+  "note": "Six-image paired audit pilot; digital transformations only."
+}

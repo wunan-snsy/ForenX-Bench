@@ -1,0 +1,13 @@
+{
+  "dataset_root": "data/external/columbia_uncompressed",
+  "split_ratios": {"train": 0.7, "dev": 0.1, "test": 0.2},
+  "seed": 20260926,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260930,
+  "jpeg_recompression_quality": 90,
+  "regularization": 0.01,
+  "learning_rate": 0.15,
+  "max_iterations": 20000,
+  "tolerance": 1e-10,
+  "threshold_selection": "maximize Youden J on development split; tie closest to 0.5"
+}

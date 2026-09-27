@@ -1,0 +1,63 @@
+\appendix
+\section{Exploratory Dual-Branch Detector Pilot}
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theHtable}{S\arabic{table}}
+This appendix records the algorithm-development pilot to keep its negative result available without presenting it as a contribution of the main study. A corrected source-connected CASIA v2 split was used for training and held-out testing; neither Columbia nor COVERAGE was used for training, fine-tuning or threshold selection. The pilot compared an RGB-only branch, a high-pass residual-only branch and a fused dual-branch network. The residual-only and fused variants used two seeds; the RGB-only result used one initial run. Table~\ref{tab:pilot} summarizes the held-out CASIA v2 and zero-shot external results.
+
+\begin{table}[h]
+\centering
+\caption{Exploratory dual-branch pilot results (mean $\pm$ sample SD for two-seed variants). AUC is image-level detection; F1 is pixel-level localization. Columbia localization is omitted because its annotation has boundary/source-region semantics.}
+\label{tab:pilot}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrr}
+\toprule
+Variant & Seeds & CASIA v2 AUC / F1 & COVERAGE AUC / F1 & Columbia AUC \\
+\midrule
+RGB-only & 1 & 0.8248 / 0.1454 & 0.5029 / 0.2081 & -- \\
+Residual-only & 2 & 0.9779$\pm$0.0001 / 0.2738$\pm$0.0136 & 0.5016$\pm$0.0052 / 0.1545$\pm$0.0106 & 0.538$\pm$0.038 \\
+Dual branch & 2 & 0.9745$\pm$0.0031 / 0.2468$\pm$0.0019 & 0.5018$\pm$0.0045 / 0.0901$\pm$0.0243 & 0.534$\pm$0.093 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+The dual-branch model did not improve on the residual-only model in these runs and was near chance on both external detection datasets. This pilot therefore does not support a new detector claim. Its limited seed count, fixed 20-epoch training budget and dataset-specific training source also preclude a broad comparative conclusion. The split construction, audit and full result files are documented in \texttt{reports/forenx\_dualbranch\_v2\_pilot.md} and the associated scripts and manifests.
+
+\subsection{Complete digital stress-test results}
+Supplementary Table~\ref{tab:stress-complete} lists clean-image performance and all four controlled transformation conditions for the two full-image stress datasets. Flip rate is measured relative to each model's clean-image decision on the same image.
+
+\begin{table}[p]
+\centering
+\caption{Complete stress-test detection results. Values are image-level ROC-AUC, fixed-threshold F1 and decision-flip rate. All transformed evaluations retain the model weights and threshold of 0.5.}
+\label{tab:stress-complete}
+\scriptsize
+\begin{tabular}{ll lrrr}
+\toprule
+Dataset & Model & Condition & ROC-AUC & F1 & Flip rate \\
+\midrule
+Columbia & TruFor & Clean & 0.9958 & 0.9861 & 0.00\% \\
+ & & JPEG q80 & 0.9831 & 0.8683 & 13.50\% \\
+ & & JPEG q40 & 0.9861 & 0.8633 & 15.43\% \\
+ & & Resize 0.5$\times$ & 0.9513 & 0.8780 & 11.57\% \\
+ & & Resize 0.25$\times$ & 0.8845 & 0.8187 & 17.91\% \\
+ & MVSS-Net & Clean & 0.9752 & 0.7412 & 0.00\% \\
+ & & JPEG q80 & 0.9789 & 0.7463 & 8.82\% \\
+ & & JPEG q40 & 0.9642 & 0.7332 & 14.33\% \\
+ & & Resize 0.5$\times$ & 0.9498 & 0.7426 & 6.89\% \\
+ & & Resize 0.25$\times$ & 0.9057 & 0.7397 & 15.15\% \\
+\midrule
+CASIA v1 & TruFor & Clean & 0.9052 & 0.7926 & 0.00\% \\
+ & & JPEG q80 & 0.8569 & 0.7126 & 8.31\% \\
+ & & JPEG q40 & 0.8009 & 0.6612 & 17.43\% \\
+ & & Resize 0.5$\times$ & 0.6826 & 0.4219 & 25.10\% \\
+ & & Resize 0.25$\times$ & 0.5923 & 0.1583 & 34.40\% \\
+ & MVSS-Net & Clean & 0.8390 & 0.7492 & 0.00\% \\
+ & & JPEG q80 & 0.7351 & 0.5528 & 12.96\% \\
+ & & JPEG q40 & 0.6421 & 0.4855 & 28.70\% \\
+ & & Resize 0.5$\times$ & 0.7630 & 0.6881 & 23.65\% \\
+ & & Resize 0.25$\times$ & 0.6871 & 0.5402 & 31.67\% \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,39 @@
+# Local datasets, model artifacts, and derived per-sample data
+/data/external/
+/external/
+/results/
+/manifests/
+/dist/
+/tmp/
+/release/
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+*.7z
+*.rar
+
+# Local model environments and caches
+**/.venv/
+**/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# LaTeX build intermediates
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+*.swp

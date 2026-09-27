@@ -1,0 +1,5 @@
+model,manipulation_type,n,macro_f1
+TruFor,Copy-move,459,0.5878719926050441
+TruFor,Splicing,461,0.7853924225690354
+MVSS-Net,Copy-move,459,0.2176795026890425
+MVSS-Net,Splicing,461,0.6848247006019001

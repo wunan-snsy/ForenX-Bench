@@ -1,0 +1,22 @@
+{
+  "dataset": "Columbia Image Splicing Detection Evaluation Dataset (2004 image-block set)",
+  "task": "binary image-block classification: authentic vs spliced",
+  "dataset_root": "data/external/columbia_image_splicing_blocks/ImSpliceDataset",
+  "manifest": "data/external/columbia_image_splicing_blocks/manifest.csv",
+  "seed": 20260925,
+  "split_group_ratios": {
+    "train": 0.7,
+    "dev": 0.1,
+    "test": 0.2
+  },
+  "features": "fixed handcrafted grayscale histogram, moments, and horizontal/vertical gradient statistics",
+  "classifier": "L2-regularized logistic regression implemented with NumPy full-batch gradient descent",
+  "regularization": 0.01,
+  "learning_rate": 0.2,
+  "max_iterations": 5000,
+  "tolerance": 1e-9,
+  "threshold_selection": "maximize Youden J on dev set; tie-break at threshold closest to 0.5",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260926,
+  "warning": "Patch-level pipeline sanity check only. Not a full-image detection or localization result. Split groups identical SHA-256 duplicates only; original parent-image IDs are unavailable, so source-scene isolation is not established."
+}

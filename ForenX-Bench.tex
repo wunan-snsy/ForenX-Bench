@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{article}
+
+% ==================== Packages ====================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage[section]{placeins}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\newcommand{\figureplaceholder}[2]{%
+  \fbox{\begin{minipage}[c][#1][c]{0.92\linewidth}\centering
+  \textit{Figure placeholder: #2}\end{minipage}}}
+
+\title{\textbf{ForenX-Bench: Auditing Cross-Dataset Reliability and Replayability in Image Manipulation Detection}}
+
+\author{Author and affiliation details omitted from this public draft}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Image manipulation detectors are commonly compared using classification and localization scores, although these metrics alone do not show how performance changes across datasets, post-processing conditions, or repeated executions. We present ForenX-Bench, an auditable evaluation protocol instantiated with two frozen localization models, TruFor and MVSS-Net, on Columbia Uncompressed, corrected CASIA v1, and corrected COVERAGE. The evaluation includes clean-image detection, mask-based localization where reference masks are dimensionally valid, controlled JPEG recompression and resize--restore stress tests, and hash-checked independent-process replay. Across the three datasets, image-level ROC-AUC ranged from 0.9958 to 0.7675 for TruFor and from 0.9752 to 0.7385 for MVSS-Net, showing dataset-dependent changes under a fixed 0.5 decision threshold. On CASIA v1, localization also varied by manipulation type, with copy-move F1 below splicing F1 for both models. For the replay audit, 90 stratified CASIA cases per model were independently rerun; all 180 runs reproduced scores and localization maps within an absolute tolerance of $10^{-5}$ after source-hash verification. These results establish deterministic replay in the tested software and hardware environment, but not cross-machine reproducibility, causal attribution, or forensic admissibility. ForenX-Bench provides code, manifests, aggregate results and replay records to support transparent extension of this evaluation; original datasets and model weights remain governed by their respective access and licensing terms.
+
+\vspace{0.3em}
+\noindent\textbf{Keywords:} image manipulation detection, digital image forensics, cross-dataset evaluation, robustness, reproducibility, auditability
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_forenx_bench_construction}
+\input{sections/04_auditable_evaluation_protocol}
+\input{sections/05_baselines_and_experiments}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
+\input{sections/09_supplementary_pilot}
+\input{sections/08_data_and_code_availability}
+
+\section*{Acknowledgments}
+Acknowledgment details omitted from this public draft.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

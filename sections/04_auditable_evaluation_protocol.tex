@@ -1,0 +1,31 @@
+\section{Evaluation Protocol and Metrics}
+
+\subsection{Detection and localization}
+Image-level detection is evaluated using the continuous model score and binary labels. We report the area under the receiver-operating-characteristic curve (ROC-AUC) and, at the fixed threshold of 0.5, accuracy, precision, recall and F1. Pixel-level localization is evaluated only for images with a dimension-aligned reference mask. At the fixed pixel threshold of 0.5, we compute precision, recall, F1, intersection over union (IoU) and Matthews correlation coefficient (MCC) per image and macro-average across eligible images. Metrics are reported by manipulation subtype when subtype labels are available. Columbia's special reference convention is reported with an explicit semantic qualification.
+
+\subsection{Evidence coverage and traceability}
+Let $D$ be the set of valid image--model decisions, $E$ the set of emitted evidence records, and $E_c\subseteq E$ the records that contain all required provenance, model, operation and integrity fields. Evidence Coverage Rate (ECR) and Evidence Traceability Rate (ETR) are defined as
+\begin{align}
+\mathrm{ECR} &= \frac{|E|}{|D|}, \\
+\mathrm{ETR} &= \frac{|E_c|}{|E|}.
+\end{align}
+ECR measures whether an evidence record exists for a decision; ETR measures completeness among emitted records. They are evaluated on all 1,721 CASIA v1 images for each of two models. Missing records are counted as coverage failures rather than silently removed from the denominator.
+
+\subsection{Independent replay}
+Let $S$ be the seeded replay sample and $S_r\subseteq S$ the cases for which the prescribed inference completes after reloading the source image and frozen model artifact in a separate process. Replay Success Rate (RSR) is
+\begin{equation}
+\mathrm{RSR}=\frac{|S_r|}{|S|}.
+\end{equation}
+Replay sampling is stratified by CASIA v1 class (authentic, copy-move and splicing), with 30 samples per class and model (90 per model; 180 attempts total; seed 20260929). A replay is successful only when the source SHA-256 agrees with the manifest and inference returns the required image-level score and localization map. The experiment reports a Wilson 95\% interval for each model's 90/90 replay rate.
+
+For successful cases, Evidence-Grounding Agreement (EGA) is the fraction for which both the absolute score difference and the maximum absolute localization-map difference between the replay and stored record are no greater than $\epsilon=10^{-5}$:
+\begin{equation}
+\mathrm{EGA}=\frac{1}{|S_r|}\sum_{i\in S_r}\mathbb{I}\left[|s_i-\tilde{s}_i|\leq\epsilon\ \land\ \|M_i-\tilde{M}_i\|_{\infty}\leq\epsilon\right],
+\end{equation}
+where $s_i$ and $M_i$ are the stored score and map, and $\tilde{s}_i$ and $\tilde{M}_i$ are their replayed counterparts. This strict numerical criterion tests deterministic replay in the recorded environment; it is not a cross-platform equivalence criterion.
+
+\subsection{Stress-test analysis}
+Each transformed image is evaluated against its untransformed counterpart using the same frozen model and 0.5 threshold. We report ROC-AUC and detection F1 under each condition, localization macro F1 where valid masks are available, the mean change in image-level score, and the fraction of cases whose binary decision changes. Stress results are descriptive for the tested images and transformations. They are not interpreted as estimates of performance under all deployment shifts.
+
+\subsection{Uncertainty and comparisons}
+For reported metrics with bootstrap intervals, resampling is performed over images rather than pixels; paired model comparisons use the same sampled images for both models. The CASIA paired comparisons use 5,000 nonparametric bootstrap resamples, and single-model confidence intervals use 2,000 resamples as specified by the analysis scripts. Replay proportions use Wilson intervals. The replay tests characterize computational repeatability, whereas detection and mask metrics characterize agreement with dataset labels; neither should be used as a substitute for the other.

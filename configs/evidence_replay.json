@@ -1,0 +1,5 @@
+{
+  "schema_version": "forenx-evidence-0.1",
+  "score_tolerance": 1e-10,
+  "required_fields": ["schema_version", "evidence_id", "sample_id", "input", "claim", "observation", "operation", "model", "applicability", "alternatives", "failure_modes", "uncertainty"]
+}

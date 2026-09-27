@@ -1,0 +1,10 @@
+{
+  "base_config": "configs/columbia_blocks_baseline.json",
+  "seed": 20260925,
+  "threshold_source": "development split from frozen baseline configuration; do not recalibrate per stress condition",
+  "jpeg_quality": [95, 80, 60, 40],
+  "resize_scale": [0.75, 0.5, 0.25],
+  "resize_downsample": "Pillow LANCZOS",
+  "resize_restore": "Pillow BICUBIC to original 128x128 before feature extraction",
+  "note": "Digital derivatives only; not a platform pipeline or physical screen recapture."
+}

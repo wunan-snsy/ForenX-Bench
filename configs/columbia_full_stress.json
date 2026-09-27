@@ -1,0 +1,8 @@
+{
+  "base_config": "configs/columbia_full_detection.json",
+  "jpeg_quality": [95, 80, 60, 40],
+  "resize_scale": [0.75, 0.5, 0.25],
+  "resize_downsample": "Pillow LANCZOS",
+  "resize_restore": "Pillow BICUBIC to original dimensions",
+  "note": "Controlled digital derivatives only; not a platform transcode or physical recapture."
+}

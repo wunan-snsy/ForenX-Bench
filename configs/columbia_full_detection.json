@@ -1,0 +1,12 @@
+{
+  "seed": 20260926,
+  "dataset_root": "data/external/columbia_uncompressed",
+  "split_ratios": {"train": 0.7, "dev": 0.1, "test": 0.2},
+  "regularization": 0.01,
+  "learning_rate": 0.2,
+  "max_iterations": 5000,
+  "tolerance": 1e-9,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20260927,
+  "warning": "Full-image detection pilot. Authentic crops sharing camera+capture index are grouped. Spliced source-image IDs are unavailable, so complete source-scene isolation cannot be established."
+}

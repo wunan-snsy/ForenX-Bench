@@ -1,0 +1,14 @@
+{
+  "seed": 20260926,
+  "input_size": 256,
+  "batch_size": 8,
+  "epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "positive_weight": 1.0,
+  "checkpoint_metric": "validation_mask_f1",
+  "image_score": "mean_top_1_percent_mask_probability",
+  "architecture": "RGB spatial encoder plus high-pass residual encoder, multiscale fusion, pixel mask head"
+}

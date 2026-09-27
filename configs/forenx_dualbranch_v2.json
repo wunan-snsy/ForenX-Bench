@@ -1,0 +1,17 @@
+{
+  "seed": 20260927,
+  "input_size": 256,
+  "batch_size": 8,
+  "epochs": 20,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.0001,
+  "num_workers": 4,
+  "mixed_precision": true,
+  "mask_loss_weight": 1.0,
+  "image_loss_weight": 0.5,
+  "image_score": "classification_head_sigmoid",
+  "architecture": "RGB spatial encoder plus high-pass residual encoder, fused segmentation decoder and global binary classification head",
+  "run_name": "forenx_dualbranch_v2_source_group",
+  "split_manifest": "manifests/casia_v2_splits.csv",
+  "split_method": "connected_components_of_tampered_source_pairs_with_authentic_sources_attached"
+}

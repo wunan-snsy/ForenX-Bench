@@ -1,0 +1,317 @@
+{
+  "release": "v1.0.0",
+  "status": "experiment_aggregate_complete",
+  "results": [
+    {
+      "dataset": "Columbia Uncompressed",
+      "condition": "clean",
+      "model": "TruFor",
+      "n_detection": 363,
+      "n_localization": 180,
+      "auc": 0.9958409228901032,
+      "detection_f1": 0.9861495844875346,
+      "localization_f1": 0.2612703045922779
+    },
+    {
+      "dataset": "Columbia Uncompressed",
+      "condition": "clean",
+      "model": "MVSS-Net",
+      "n_detection": 363,
+      "n_localization": 180,
+      "auc": 0.9752276867030966,
+      "detection_f1": 0.7412008281573499,
+      "localization_f1": 0.24907796781066457
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "condition": "clean",
+      "model": "TruFor",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.9052130836047774,
+      "detection_f1": 0.7926442612555485,
+      "localization_f1": 0.6868469037065658
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "condition": "clean",
+      "model": "MVSS-Net",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.839028230184582,
+      "detection_f1": 0.7491770901909152,
+      "localization_f1": 0.4517598681649418
+    },
+    {
+      "dataset": "COVERAGE corrected",
+      "condition": "clean",
+      "model": "TruFor",
+      "n_detection": 200,
+      "n_localization": 91,
+      "auc": 0.7675,
+      "detection_f1": 0.581081081081081,
+      "localization_f1": 0.5555194419944262
+    },
+    {
+      "dataset": "COVERAGE corrected",
+      "condition": "clean",
+      "model": "MVSS-Net",
+      "n_detection": 200,
+      "n_localization": 91,
+      "auc": 0.7385,
+      "detection_f1": 0.6713780918727915,
+      "localization_f1": 0.48171984569429005
+    }
+  ],
+  "casia_stress": [
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "TruFor",
+      "condition": "jpeg_q80",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.8568688925081434,
+      "detection_f1": 0.7125506072874493,
+      "localization_f1": 0.5926480388539462,
+      "mean_score_delta": -0.04284365909709284,
+      "image_prediction_flip_rate": 0.0830912260313771
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "TruFor",
+      "condition": "jpeg_q40",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.8008808360477742,
+      "detection_f1": 0.6612355736591989,
+      "localization_f1": 0.5063319510770915,
+      "mean_score_delta": -0.03537999428708576,
+      "image_prediction_flip_rate": 0.17431725740848344
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "TruFor",
+      "condition": "resize_0.5",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.6826275787187839,
+      "detection_f1": 0.42194092827004226,
+      "localization_f1": 0.34739195944350837,
+      "mean_score_delta": -0.24013314138324623,
+      "image_prediction_flip_rate": 0.25101685066821616
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "TruFor",
+      "condition": "resize_0.25",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.5923330618892508,
+      "detection_f1": 0.1582591493570722,
+      "localization_f1": 0.19728104551048575,
+      "mean_score_delta": -0.3412117170720436,
+      "image_prediction_flip_rate": 0.34398605461940734
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "MVSS-Net",
+      "condition": "jpeg_q80",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.7350977198697068,
+      "detection_f1": 0.5528330781010721,
+      "localization_f1": 0.2259753202233062,
+      "mean_score_delta": -0.12253113654182378,
+      "image_prediction_flip_rate": 0.12957582800697268
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "MVSS-Net",
+      "condition": "jpeg_q40",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.6421118349619979,
+      "detection_f1": 0.48549186128803956,
+      "localization_f1": 0.1132964013993957,
+      "mean_score_delta": -0.05489664968524728,
+      "image_prediction_flip_rate": 0.28704241719930274
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "MVSS-Net",
+      "condition": "resize_0.5",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.763015743756786,
+      "detection_f1": 0.6881472957422324,
+      "localization_f1": 0.33615744942707243,
+      "mean_score_delta": 0.09616246343877671,
+      "image_prediction_flip_rate": 0.23649041255084252
+    },
+    {
+      "dataset": "CASIA v1 corrected",
+      "model": "MVSS-Net",
+      "condition": "resize_0.25",
+      "n_detection": 1721,
+      "n_localization": 920,
+      "auc": 0.6870928338762216,
+      "detection_f1": 0.5402455661664394,
+      "localization_f1": 0.1313617327282622,
+      "mean_score_delta": -0.055887482997315746,
+      "image_prediction_flip_rate": 0.3166763509587449
+    }
+  ],
+  "casia_v1_independent_replay": {
+    "schema_version": "forenx-replay-1.1",
+    "selection": {
+      "method": "seeded random sample within authentic, copy-move, and splicing strata",
+      "per_stratum_per_model": 30,
+      "seed": 20260929
+    },
+    "tolerance": {
+      "score_abs_error": 1e-05,
+      "map_max_abs_error": 1e-05
+    },
+    "models": {
+      "trufor": {
+        "attempted": 90,
+        "successful_outputs": 90,
+        "replay_success_rate": 1.0,
+        "replay_success_rate_wilson95": [
+          0.9590643744356734,
+          1.0
+        ],
+        "agreement_with_original": 90,
+        "evidence_agreement_rate": 1.0,
+        "evidence_agreement_rate_wilson95": [
+          0.9590643744356734,
+          1.0
+        ]
+      },
+      "mvss": {
+        "attempted": 90,
+        "successful_outputs": 90,
+        "replay_success_rate": 1.0,
+        "replay_success_rate_wilson95": [
+          0.9590643744356734,
+          1.0
+        ],
+        "agreement_with_original": 90,
+        "evidence_agreement_rate": 1.0,
+        "evidence_agreement_rate_wilson95": [
+          0.9590643744356734,
+          1.0
+        ]
+      }
+    },
+    "by_stratum": {
+      "trufor": {
+        "authentic": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        "CM": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        "Sp": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        }
+      },
+      "mvss": {
+        "authentic": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        "CM": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        },
+        "Sp": {
+          "attempted": 30,
+          "successful_outputs": 30,
+          "RSR": 1.0,
+          "RSR_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ],
+          "agreement_within_tolerance": 30,
+          "EGA": 1.0,
+          "EGA_wilson95": [
+            0.8864866068260312,
+            0.9999999999999999
+          ]
+        }
+      }
+    }
+  },
+  "release_readiness": {
+    "project_license": "MIT for original project software code only",
+    "third_party_rights": "datasets, model source, and checkpoints are excluded and remain governed by upstream terms; see DATA_AND_RIGHTS.md",
+    "sample_level_materials": "excluded because publication rights were not verified"
+  },
+  "coverage_data_quality": {
+    "n_detection": 200,
+    "n_localization": 91,
+    "localization_excluded_mask_dimension_mismatch": 9
+  },
+  "provenance": {
+    "source": "project experiment reports and local result summaries; sample-level source files are excluded from the public release"
+  }
+}
